@@ -23,8 +23,8 @@ const Schema = new GraphQLSchema({
                     }
                 },
                 resolve(root, args){
-                  return axios.get('https://www.yandex.ru/')
-                      .then( response => cheerio.load(response.data))
+                  return axios.get(args.url)
+                      .then( response => response.data)
                 }
             }
         }
