@@ -3,10 +3,9 @@ import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLNonNull,
-    GraphQLList
 } from 'graphql'
 
-import pageType from './pageType';
+import nodeType from './nodeType';
 import axios from 'axios';
 import cheerio from 'cheerio'
 
@@ -15,7 +14,7 @@ const Schema = new GraphQLSchema({
         name: 'RootQueryType',
         fields: {
             page: {
-                type:pageType,
+                type:nodeType,
                 args: {
                     url:{
                         type: new GraphQLNonNull(GraphQLString),
@@ -24,7 +23,7 @@ const Schema = new GraphQLSchema({
                 },
                 resolve(root, args){
                   return axios.get(args.url)
-                      .then( response => response.data)
+                      .then( response => cheerio.load(response.data))
                 }
             }
         }
