@@ -2,7 +2,7 @@ import chai from "chai"
 import chaiAsPromised from "chai-as-promised"
 import fs from "fs"
 import express from "express"
-import gdom from "../src/gdom-node"
+import {parse} from "../src/gdom-node"
 
 chai.should();
 chai.use(chaiAsPromised);
@@ -34,7 +34,7 @@ let query = `{
 describe("GDOM parser", ()=>{
     let result;
     before(()=> {
-        result = gdom.parse(query);
+        result = parse(query);
     });
 
     describe("text()", ()=>{

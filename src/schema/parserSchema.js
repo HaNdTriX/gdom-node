@@ -7,7 +7,6 @@ import {
 
 import nodeType from './nodeType';
 import axios from 'axios';
-import cheerio from 'cheerio'
 
 export const Schema = new GraphQLSchema({
     query: new GraphQLObjectType({

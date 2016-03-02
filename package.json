@@ -1,7 +1,7 @@
 {
   "name": "gdom-node",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.7",
+  "description": "Next gen html parser with graphql",
   "main": "lib/gdom-node.js",
   "scripts": {
     "start": "nodemon index.js",
