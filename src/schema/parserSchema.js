@@ -9,7 +9,7 @@ import nodeType from './nodeType';
 import axios from 'axios';
 import cheerio from 'cheerio'
 
-const Schema = new GraphQLSchema({
+export const Schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'RootQueryType',
         fields: {
@@ -22,11 +22,10 @@ const Schema = new GraphQLSchema({
                     }
                 },
                 resolve(root, args){
-                  return axios.get(args.url)
-                      .then( response => cheerio.load(response.data))
+                    return axios.get(args.url)
+                      .then( response => response.data)
                 }
             }
         }
     })
 });
-export default Schema;

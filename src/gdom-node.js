@@ -1,3 +1,12 @@
-import Schema from './schema/parserSchema'
+import {Schema} from './schema/parserSchema'
+import {graphql} from "graphql"
 
-export default Schema
+const parse = (query)=> {
+  return graphql(Schema, query);
+};
+
+const gdom = {
+    Schema,
+    parse
+};
+export default gdom
