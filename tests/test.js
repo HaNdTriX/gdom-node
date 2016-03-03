@@ -28,6 +28,11 @@ let query = `{
                     next:next(selector:".list-next"){
                       text
                     }
+                    parent:query(selector:".children"){
+                      parent{
+                        text
+                      }
+                    }
                 }
             }`;
 
@@ -77,7 +82,13 @@ describe("GDOM parser", ()=>{
         it("Get next element(sibling)", ()=>{
             return result.should.eventually.to.have.deep.property('data.page.next.text','Next')
         })
-    })
+    });
+
+    describe("parent()", ()=>{
+        it("Get element parent", ()=>{
+            return result.should.eventually.to.have.deep.property('data.page.parent[0].parent.text','text')
+        })
+    });
 });
 
 

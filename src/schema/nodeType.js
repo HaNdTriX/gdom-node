@@ -2,6 +2,7 @@ import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLList,
+    GraphQLUnionType
 } from 'graphql'
 
 import cheerio  from 'cheerio'
@@ -10,6 +11,7 @@ const selector = {
     type:GraphQLString,
     description:"DOM element selector"
 };
+
 
 
 const Node = new GraphQLObjectType({
@@ -87,6 +89,12 @@ const Node = new GraphQLObjectType({
                     }
                 }
             },
+            parent:{
+                type:Node,
+                resolve(root){
+                    return cheerio(root).parent()
+                }
+            },
             query:{
                 type:new GraphQLList(Node),
                 args:{selector},
@@ -100,5 +108,9 @@ const Node = new GraphQLObjectType({
         }
     }
 });
+
+
+
+
 
 export default Node
