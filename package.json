@@ -16,7 +16,7 @@
     "graphQl"
   ],
   "dependencies": {
-    "axios": "^0.8.1",
+    "axios": "^0.9.1",
     "cheerio": "^0.20.0",
     "graphql": "^0.4.14"
   },
