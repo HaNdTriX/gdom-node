@@ -19,8 +19,6 @@
   "dependencies": {
     "axios": "^0.9.1",
     "cheerio": "^0.20.0",
-    "eslint": "^2.3.0",
-    "eslint-config-airbnb": "^6.1.0",
     "graphql": "^0.4.14"
   },
   "devDependencies": {
@@ -32,10 +30,16 @@
     "chai-as-promised": "^5.2.0",
     "express": "^4.13.4",
     "express-graphql": "^0.4.9",
+    "eslint": "^2.3.0",
+    "eslint-config-airbnb": "^6.1.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.8.1",
     "webpack": "^1.12.11"
   },
   "author": "IamNotUrKitty",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IamNotUrKitty/gdom-node.git"
+  }
 }
